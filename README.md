@@ -1,84 +1,89 @@
 # Persian PWA 🇮🇷
 
-A modern **Progressive Web App (PWA)** built for the Persian (Farsi) language and culture.
+A modern **Progressive Web App** for learning Persian (Farsi) — with lessons, flashcards, spaced repetition, speech features, and full offline support.
 
 ## ✨ Features
 
-- **Offline-first** – Works without internet thanks to service workers
-- **Installable** – Add to home screen on mobile/desktop like a native app
-- **RTL Support** – Full right-to-left layout optimized for Persian
-- **Responsive Design** – Beautiful on phones, tablets, and desktops
-- **Fast & Lightweight** – Built with modern web technologies
+- **Interactive Lessons** & **Flashcards**
+- **Spaced Repetition System (SRS)** for better retention
+- **Speech-to-Text (STT)** and **Text-to-Speech (TTS)**
+- **Progress Tracking** with visual bars and statistics
+- **Offline-first** – Works without internet (thanks to Service Worker)
+- **Installable PWA** – Feels like a native app on mobile/desktop
+- **RTL + Persian-first** design
+- Responsive & beautiful UI
 
 ## 🚀 Tech Stack
 
-- **Frontend**: [HTML5, CSS3, JavaScript] (or specify your framework: React/Vue/Svelte/etc.)
-- **PWA Features**: Service Worker, Web App Manifest, Cache API
-- **Styling**: Tailwind CSS / custom CSS (with RTL support)
-- **Icons**: Persian-friendly icons and fonts
+- **React** + JSX/TSX
+- **Vite** (build tool)
+- **PWA**: Service Worker (`sw.js`), Web App Manifest
+- **State Management**: Custom hooks (`useProgress`, `useSRS`, etc.)
+- **Speech APIs**: Web Speech API (STT/TTS)
+- **Storage**: Local storage utilities
+- Tailwind CSS or custom styling (with RTL support)
 
-## 📱 Installation
+## 📱 Quick Start
 
-1. Clone the repository:
+1. Clone the repo:
    ```bash
    git clone https://github.com/veritasndiema-ctrl/persian-pwa.git
    cd persian-pwa
    ```
 
-2. Open `index.html` in your browser or serve it locally:
+2. Install dependencies:
    ```bash
-   # Using Python
-   python -m http.server 8000
+   npm install
    ```
 
-3. Visit `http://localhost:8000` and click **"Install"** in the browser prompt.
+3. Run development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+5. **Install as PWA**: Open in Chrome/Edge → Click install icon in address bar.
 
 ## 📖 Usage
 
-- Persian keyboard / virtual keyboard
-- Farsi dictionary or translator
-- Cultural content / poetry reader
-- Prayer times + Qibla (common in Persian PWAs)
-- Finance tracker / todo list in Persian
-- Or whatever your specific app does
+- Browse curriculum → Start lessons
+- Practice with flashcards (spaced repetition)
+- Use voice input/output for pronunciation
+- Track your daily progress
 
-## 🛠️ Development
+## 📁 Project Structure
 
-### Project Structure
 ```
 persian-pwa/
-├── index.html
-├── manifest.json
-├── sw.js              # Service Worker
-├── assets/
-│   ├── icons/
-│   └── images/
-├── css/
-├── js/
+├── public/
+│   └── manifest.json
+├── src/
+│   ├── components/     # ExerciseCard, NavBar, HeartBar, etc.
+│   ├── pages/          # Home, Lesson, Flashcards, Progress
+│   ├── data/           # lessons.json, curriculum.json
+│   ├── hooks/          # useProgress, useSRS, useSTT, useTTS
+│   ├── utils/          # storage, sm2 (SuperMemo algorithm)
+│   ├── sw.js           # Service Worker (PWA)
+│   └── main.jsx
+├── vite.config.js
 └── README.md
 ```
 
-### Adding PWA Capabilities
-- `manifest.json` defines app name, icons, theme colors, and display mode
-- `sw.js` handles caching and offline functionality
+## 🛠️ Development
+
+- Add new lessons in `src/data/lessons.json`
+- Customize curriculum in `curriculum.json`
+- Improve STT/TTS in the respective hooks
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+MIT License — see [LICENSE](LICENSE) file.
 
 ## 👤 Author
 
 **Keith Ndiema K**  
-veritasndiema-ctrl
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!  
-Feel free to check the [issues page](https://github.com/veritasndiema-ctrl/persian-pwa/issues).
-
-## ⭐ Show Your Support
-
-Give a star if this project helped you or if you like the idea!
-
-
-Made with ❤️ for the Persian community
+[veritasndiema-ctrl](https://github.com/veritasndiema-ctrl)
